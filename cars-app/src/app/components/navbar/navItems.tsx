@@ -1,12 +1,12 @@
 import React from 'react';
 import styled, { css } from "styled-components";
 import tw from 'twin.macro';
-import { slide as Menu} from "react-burger-menu";
+import { slide as Menu } from "react-burger-menu";
 import { useMediaQuery } from 'react-responsive';
 import { SCREENS } from '../../responsive';
 import menuStyles from './menuStyles';
 
-const ListContainer  = styled.ul`
+const ListContainer = styled.ul`
     ${tw`
         flex
         list-none
@@ -29,8 +29,8 @@ const NavItem = styled.li<{ menu?: any }>`
     `};
 
     ${({ menu }) =>
-    menu &&
-    css`
+        menu &&
+        css`
         ${tw`
             text-white
             text-xl
@@ -44,24 +44,24 @@ export function NavItems() {
     const isMobile = useMediaQuery({ maxWidth: SCREENS.sm });
 
     if (isMobile)
-    return (
-        <Menu right styles={menuStyles}>
-            <ListContainer>
-            <NavItem menu>
-                <a href="#">Home</a>
-            </NavItem>
-            <NavItem menu>
-                <a href="#">Cars</a>
-            </NavItem>
-            <NavItem menu>
-                <a href="#">Services</a>
-            </NavItem>
-            <NavItem menu>
-                <a href="#">Contact Us</a>
-            </NavItem>
-            </ListContainer>
-        </Menu>
-    );
+        return (
+            <Menu right styles={menuStyles}>
+                <ListContainer>
+                    <NavItem menu>
+                        <a href="#">Home</a>
+                    </NavItem>
+                    <NavItem menu>
+                        <a href="#">Cars</a>
+                    </NavItem>
+                    <NavItem menu>
+                        <a href="#">Services</a>
+                    </NavItem>
+                    <NavItem menu>
+                        <a href="#">Contact Us</a>
+                    </NavItem>
+                </ListContainer>
+            </Menu>
+        );
 
     return (
         <ListContainer>
